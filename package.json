@@ -12,7 +12,7 @@
     "preview": "vite preview",
     "prepare": "husky install",
     "lint:script": "eslint --ext .js,.jsx,.ts,.tsx --fix --quiet ./",
-    "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
+    "lint:style": "stylelint --fix \"src/**/*.{css,scss,less}\"",
     "lint": "pnpm run lint:script && pnpm run lint:style"
   },
   "lint-staged": {
