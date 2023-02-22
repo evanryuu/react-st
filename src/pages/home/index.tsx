@@ -5,9 +5,7 @@ function Home() {
   const countStore = useCountStore()
   return (
     <>
-      <div>
-        This is home page
-      </div>
+      <div>This is home page</div>
       <div className="App">
         <div>
           <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
@@ -20,16 +18,10 @@ function Home() {
         <h1>Vite + React</h1>
         <div className="card">
           <button type="button" onClick={() => countStore.increment()}>
-            count is
-            {' '}
-            {countStore.count}
+            count is {countStore.count}
           </button>
           <p>
-            Edit
-            {' '}
-            <code>src/App.tsx</code>
-            {' '}
-            and save to test HMR
+            Edit <code>src/App.tsx</code> and save to test HMR
           </p>
         </div>
         <p className="read-the-docs">

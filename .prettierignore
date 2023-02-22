@@ -1,4 +1,2 @@
 *.json
-*.md
-*.css
 node_modules

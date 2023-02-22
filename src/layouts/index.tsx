@@ -7,8 +7,12 @@ function Layout() {
 
   return (
     <>
-      <button type="button" onClick={() => navigate('/home')}>Go to Home</button>
-      <button className="ml-4" type="button" onClick={() => navigate('/about')}>Go to About</button>
+      <button type="button" onClick={() => navigate('/home')}>
+        Go to Home
+      </button>
+      <button className="ml-4" type="button" onClick={() => navigate('/about')}>
+        Go to About
+      </button>
       <Outlet />
     </>
   )

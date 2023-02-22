@@ -4,6 +4,8 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:import/typescript',
     'plugin:css-import-order/recommended',
+    'prettier',
+    'plugin:prettier/recommended',
   ],
   env: {
     browser: true,
@@ -36,57 +38,89 @@ module.exports = {
         '@typescript-eslint/no-unused-vars': [2, { args: 'none' }],
         'no-unused-expressions': 'off',
         '@typescript-eslint/no-unused-expressions': 2,
-        '@typescript-eslint/consistent-type-imports': [2, { disallowTypeAnnotations: false }],
-        'react/jsx-tag-spacing': [2, {
-          closingSlash: 'never',
-          beforeSelfClosing: 'always',
-          afterOpening: 'never',
-          beforeClosing: 'never',
-        }],
+        '@typescript-eslint/consistent-type-imports': [
+          2,
+          { disallowTypeAnnotations: false },
+        ],
+        'react/jsx-tag-spacing': [
+          2,
+          {
+            closingSlash: 'never',
+            beforeSelfClosing: 'always',
+            afterOpening: 'never',
+            beforeClosing: 'never',
+          },
+        ],
       },
     },
   ],
   rules: {
+    'prettier/prettier': 'error', // enable prettier auto fix
     semi: [2, 'never'],
     indent: 'off',
     'no-trailing-spaces': [2],
-    quotes: [2, 'single'], // 统一单引号
-    'space-infix-ops': [2, { int32Hint: false }], // 二元操作符（比如=, |, +）前后有空格
-    'space-before-function-paren': [2, {
-      anonymous: 'always', // 匿名函数前要有空格
-      named: 'never', // 具名函数名前不允许有空格
-      asyncArrow: 'always', // asnyc箭头函数前要有空格
-    }],
-    'keyword-spacing': [2, {
-      before: true,
-      after: true,
-    }],
-    'comma-spacing': [2, {
-      before: false, // 逗号前无空格
-      after: true, // 逗号后有空格
-    }],
-    'max-len': [2, {
-      code: 144, // 每行最长144个字符
-      ignoreStrings: true, // 忽略字符串长度
-    }],
+    quotes: [2, 'single'],
+    'space-infix-ops': [2, { int32Hint: false }],
+    'space-before-function-paren': [
+      2,
+      {
+        anonymous: 'always',
+        named: 'never',
+        asyncArrow: 'always',
+      },
+    ],
+    'keyword-spacing': [
+      2,
+      {
+        before: true,
+        after: true,
+      },
+    ],
+    'comma-spacing': [
+      2,
+      {
+        before: false,
+        after: true,
+      },
+    ],
+    'max-len': [
+      2,
+      {
+        code: 144,
+        ignoreStrings: true,
+      },
+    ],
     'block-spacing': [2, 'always'],
-    'key-spacing': [2, {
-      beforeColon: false, // 对象键名:前必须无空格，e.g. {key :1} => {key: 1}
-      afterColon: true, // 对象键名:后必须接空格，e.g. {key:1} => {key: 1}
-    }],
-    'arrow-spacing': [2, {
-      before: true,
-      after: true,
-    }],
-    '@typescript-eslint/indent': [2, 2, { ignoredNodes: ['JSXElement *', 'JSXElement'] }],
+    'key-spacing': [
+      2,
+      {
+        beforeColon: false,
+        afterColon: true,
+      },
+    ],
+    'arrow-spacing': [
+      2,
+      {
+        before: true,
+        after: true,
+      },
+    ],
+    '@typescript-eslint/indent': [
+      2,
+      2,
+      { ignoredNodes: ['JSXElement *', 'JSXElement'] },
+    ],
     'react/jsx-indent-props': [2, 2],
     'react/jsx-one-expression-per-line': 0,
     'react/react-in-jsx-scope': 0,
     'react/prop-types': 0,
-    'react/jsx-curly-spacing': [2, 'never'], // JSX{}内部是否有空格
+    'react/jsx-curly-spacing': [2, 'never'],
     'react/forbid-prop-types': 0,
-    'react/jsx-boolean-value': [2, 'never'], // 属性值为true时省略
-    'react/jsx-wrap-multilines': ['error', { declaration: false, assignment: false }],
+    'react/jsx-boolean-value': [2, 'never'],
+    'react/jsx-wrap-multilines': [
+      'error',
+      { declaration: false, assignment: false },
+    ],
     'react/jsx-filename-extension': 0,
     'react/state-in-constructor': 0,
     'react/jsx-props-no-spreading': 0,
@@ -103,7 +137,7 @@ module.exports = {
     'react/function-component-definition': 0,
     'react/no-unused-class-component-methods': 0,
     'react/no-array-index-key': 0,
-    'jsx-a11y/click-events-have-key-events': 0, // 并不是所有点击事件都要绑定key事件
+    'jsx-a11y/click-events-have-key-events': 0,
 
     'import/extensions': 0,
     'import/no-cycle': 0,
@@ -113,7 +147,15 @@ module.exports = {
     'import/order': [
       'error',
       {
-        groups: ['builtin', 'external', 'internal', 'sibling', 'index', 'object', 'type'],
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          'sibling',
+          'index',
+          'object',
+          'type',
+        ],
         pathGroups: [
           {
             pattern: 'react',
