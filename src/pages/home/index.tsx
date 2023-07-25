@@ -1,12 +1,16 @@
+import { useTranslation } from 'react-i18next'
+
 import reactLogo from '@/assets/react.svg'
+import { Button } from '@/components'
 import { useCountStore } from '@/store'
 
-function Home() {
+const Home = () => {
+  const { t } = useTranslation()
   const countStore = useCountStore()
   return (
     <>
       <div>
-        This is home page
+        { t('thisIsHomePage', { keyPrefix: 'home' }) }
       </div>
       <div className="App">
         <div>
@@ -19,21 +23,21 @@ function Home() {
         </div>
         <h1>Vite + React</h1>
         <div className="card">
-          <button type="button" onClick={() => countStore.increment()}>
+          <Button onClick={() => countStore.increment()}>
             count is
-            {' '}
-            {countStore.count}
-          </button>
+            { ' ' }
+            { countStore.count }
+          </Button>
           <p>
-            Edit
-            {' '}
+            { t('edit', { keyPrefix: 'global' }) }
+            { ' ' }
             <code>src/App.tsx</code>
-            {' '}
-            and save to test HMR
+            { ' ' }
+            { t('testHMR', { keyPrefix: 'home' }) }
           </p>
         </div>
         <p className="read-the-docs">
-          Click on the Vite and React logos to learn more
+          { t('readTheDocs', { keyPrefix: 'home' }) }
         </p>
       </div>
     </>
